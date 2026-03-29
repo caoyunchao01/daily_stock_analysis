@@ -227,7 +227,7 @@ def _compute_trading_day_filter(
         - effective_region '' = all relevant markets closed, skip market review
         - should_skip_all: skip entire run when no stocks and no market review to run
     """
-    force_run = getattr(args, 'force_run', False)
+    force_run = getattr(args, 'force_run', True)
     if force_run or not getattr(config, 'trading_day_check_enabled', True):
         return (stock_codes, None, False)
 
